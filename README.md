@@ -8,7 +8,7 @@ Esta stack utiliza Loki, Grafana, Tempo e Prometheus (LGTM) para fornecer logs, 
 - Docker
 - Docker Compose
 
-### Comandos Úteis
+### Comandos Úteis (Executar dentro da pasta `monitoring/`)
 - `make obs-up`: Inicia a stack de observabilidade.
 - `make obs-down`: Para a stack.
 - `make obs-status`: Verifica o status dos containers.

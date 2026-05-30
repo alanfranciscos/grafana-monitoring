@@ -7,5 +7,6 @@
 
 ## Architecture
 - **Observability**: We use the LGTM stack (Loki, Grafana, Tempo, Prometheus) for local development.
-- **Isolation**: Monitoring configurations are kept in the `monitoring/` directory.
-- **Automation**: Use `Makefile` targets (`obs-up`, `obs-down`, `obs-status`) to manage the stack.
+- **Isolation**: Monitoring configurations and documentation are isolated in the `monitoring/` directory.
+- **Automation**: Use `Makefile` targets (`obs-up`, `obs-down`, `obs-status`) located inside `monitoring/` to manage the stack.
+- **Version Control**: This directory is managed as a standalone git repository with atomic commit requirements.
