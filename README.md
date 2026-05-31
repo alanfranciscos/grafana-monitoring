@@ -14,12 +14,15 @@ Esta stack utiliza a imagem unificada `grafana/otel-lgtm` que agrupa Loki, Grafa
 - `make obs-status`: Verifica o status do container.
 
 ### Acesso aos Serviços
-- **Grafana**: http://localhost:3000 (Login: admin/admin)
+- **Grafana**: http://localhost:3000 (Acesso anônimo como Admin habilitado)
+- **Loki**: http://localhost:3100
+- **Tempo**: http://localhost:3200
+- **Prometheus**: http://localhost:9090
 - **OpenTelemetry (gRPC)**: localhost:4317
 - **OpenTelemetry (HTTP)**: http://localhost:4318
 
 ### Notas de Implementação
-A stack utiliza configurações padrão da imagem `otel-lgtm`, garantindo integração nativa entre as ferramentas.
+A stack utiliza a imagem `grafana/otel-lgtm:latest`, que integra todos os componentes de observabilidade em um único processo, facilitando o desenvolvimento local e eliminando a necessidade de gerenciar múltiplos containers e redes complexas.
 
 ## Planejamento de Capacidade (Produção K8s)
 

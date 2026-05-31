@@ -6,9 +6,9 @@
 - **Atomic Commits**: Each commit should represent a single logical change.
 
 ## Architecture
-- **Observability**: We use the LGTM stack (Loki, Grafana, Tempo, Prometheus) for local development.
-- **Push-based Telemetry**: Applications push traces and metrics directly to Tempo (port 4317/4318) via OTLP.
-- **Connectivity**: Local containers should use `--network host` or the `host.docker.internal` alias to reach the monitoring stack exposed on the host.
+- **Observability**: We use the unified `grafana/otel-lgtm` image for local development, providing a single-binary LGTM stack.
+- **Push-based Telemetry**: Applications push traces, logs, and metrics to the OTLP receiver (ports 4317 gRPC / 4318 HTTP) provided by the embedded OpenTelemetry Collector.
+- **Connectivity**: For Linux, use the host IP (e.g., `172.17.0.1`) if the application is in a different bridge network. For MacOS/Windows, use `host.docker.internal`.
 - **Isolation**: Monitoring configurations and documentation are isolated in the `monitoring/` directory.
 - **Automation**: Use `Makefile` targets (`obs-up`, `obs-down`, `obs-status`) located inside `monitoring/` to manage the stack.
 - **Version Control**: This directory is managed as a standalone git repository with atomic commit requirements.
