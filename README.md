@@ -26,6 +26,8 @@ A stack utiliza a imagem `grafana/otel-lgtm:latest`, que integra todos os compon
 
 ## Planejamento de Capacidade (Produção K8s)
 
+> **Nota:** Os valores abaixo referem-se a uma implantação de produção em larga escala (Kubernetes). Para a stack local (`otel-lgtm`), recomenda-se reservar apenas **4Gi de RAM** e **2 CPUs** no Docker.
+
 | Componente | CPU (Request/Limit) | Memória (Request/Limit) | Notas |
 | :--- | :--- | :--- | :--- |
 | Loki | 500m / 2 | 2Gi / 4Gi | Escala horizontalmente via microservices. |
