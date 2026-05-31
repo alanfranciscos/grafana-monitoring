@@ -2,7 +2,7 @@
 
 ## Observabilidade Local
 
-Esta stack utiliza Loki, Grafana, Tempo e Prometheus (LGTM) para fornecer logs, métricas e traces.
+Esta stack utiliza a imagem unificada `grafana/otel-lgtm` que agrupa Loki, Grafana, Tempo e Prometheus em um único container, otimizada para o desenvolvimento local e suporte nativo a OpenTelemetry.
 
 ### Pré-requisitos
 - Docker
@@ -11,16 +11,15 @@ Esta stack utiliza Loki, Grafana, Tempo e Prometheus (LGTM) para fornecer logs, 
 ### Comandos Úteis (Executar dentro da pasta `monitoring/`)
 - `make obs-up`: Inicia a stack de observabilidade.
 - `make obs-down`: Para a stack.
-- `make obs-status`: Verifica o status dos containers.
+- `make obs-status`: Verifica o status do container.
 
 ### Acesso aos Serviços
 - **Grafana**: http://localhost:3000 (Login: admin/admin)
-- **Prometheus**: http://localhost:9090
-- **Loki**: http://localhost:3100
-- **Tempo**: http://localhost:3200
+- **OpenTelemetry (gRPC)**: localhost:4317
+- **OpenTelemetry (HTTP)**: http://localhost:4318
 
-### Retenção de Dados
-A retenção local está configurada para **10 dias** para economizar espaço em disco.
+### Notas de Implementação
+A stack utiliza configurações padrão da imagem `otel-lgtm`, garantindo integração nativa entre as ferramentas.
 
 ## Planejamento de Capacidade (Produção K8s)
 
